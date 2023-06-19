@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-19T13:12:42 IST" name="Suite" finished-at="2023-06-19T13:12:56 IST" duration-ms="13808">
+    <groups>
+    </groups>
+    <test started-at="2023-06-19T13:12:42 IST" name="Test" finished-at="2023-06-19T13:12:56 IST" duration-ms="13808">
+      <class name="test_cases.RemoveFromCart">
+        <test-method is-config="true" signature="browserSetUp(java.lang.String)[pri:0, instance:test_cases.RemoveFromCart@25084a1e]" started-at="2023-06-19T13:12:42 IST" name="browserSetUp" finished-at="2023-06-19T13:12:48 IST" duration-ms="5933" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://demowebshop.tricentis.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetUp -->
+        <test-method signature="removeFromCartTestCase(java.lang.String,java.lang.String)[pri:0, instance:test_cases.RemoveFromCart@25084a1e]" started-at="2023-06-19T13:12:51 IST" name="removeFromCartTestCase" data-provider="LoginData" finished-at="2023-06-19T13:12:56 IST" duration-ms="5463" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nandanms@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[nandan@1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeFromCartTestCase -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:test_cases.RemoveFromCart@25084a1e]" started-at="2023-06-19T13:12:56 IST" name="BrowserTearDown" finished-at="2023-06-19T13:12:56 IST" duration-ms="230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- test_cases.RemoveFromCart -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
