@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class BooksPage {
 	WebDriver driver;
@@ -20,6 +21,25 @@ public class BooksPage {
 		return sortByDropdown;
 	}
 	
+	// Sort by drop down selectByIndex
+	public void selectSortByIndex(int index) {
+		Select select=new Select(sortByDropdown);
+		select.selectByIndex(index);
+	}
+	
+	// Sort by drop down selectByVisibleText
+	public void selectSortByVisibleText(String name ) {
+		Select select=new Select(sortByDropdown);
+		select.selectByVisibleText(name);
+	}
+	
+	// Sort by drop down selectByValue
+	public void selectSortByValue(String value ) {
+		Select select=new Select(sortByDropdown);
+		select.selectByValue(value);
+	}
+	
+	
 	
 	//Display drop down / Page size drop down
 	@FindBy(id = "products-pagesize")
@@ -30,6 +50,27 @@ public class BooksPage {
 	}
 	
 	
+	
+	
+	       // View as drop down selectByIndex
+			public void selectPageSizeByIndex(int index) {
+				Select select=new Select(pageSizeDropDown);
+				select.selectByIndex(index);
+			}
+			
+			// View as drop down selectByVisibleText
+			public void selectPageSizeByVisibleText(String name ) {
+				Select select=new Select(pageSizeDropDown);
+				select.selectByVisibleText(name);
+			}
+			
+			// View as drop down selectByValue
+			public void selectPageSizeByValue(String value ) {
+				Select select=new Select(pageSizeDropDown);
+				select.selectByValue(value);
+			}
+	
+	
 	//ViewAs drop down
 	@FindBy(id = "products-viewmode")
 	private WebElement viewAsDropDown;
@@ -37,6 +78,24 @@ public class BooksPage {
 	public WebElement getViewAsDropDown() {
 		return viewAsDropDown;
 	}
+	
+	// View as drop down selectByIndex
+		public void selectViewAsByIndex(int index) {
+			Select select=new Select(viewAsDropDown);
+			select.selectByIndex(index);
+		}
+		
+		// View as drop down selectByVisibleText
+		public void selectViewAsByVisibleText(String name ) {
+			Select select=new Select(viewAsDropDown);
+			select.selectByVisibleText(name);
+		}
+		
+		// View as drop down selectByValue
+		public void selectViewAsByValue(String value ) {
+			Select select=new Select(viewAsDropDown);
+			select.selectByValue(value);
+		}
 	
 	
 	//Computing and internet book image

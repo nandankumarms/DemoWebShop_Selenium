@@ -29,7 +29,7 @@ public class BaseTest {
 		
 		//Enable implicit wait
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.println("Url is :   "+url);
+//		System.out.println("Url is :   "+url);
 		//Navigate to wesite
 		driver.get(url);
 	}

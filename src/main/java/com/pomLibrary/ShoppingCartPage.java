@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class ShoppingCartPage {
 	WebDriver driver; 
@@ -195,6 +196,26 @@ public class ShoppingCartPage {
 	public WebElement getcountryDropDown() {
 		return countryDropDown;
 	}
+	
+	
+	//Select country by index
+	public void selectCountryByIndex(int index) {
+		Select select=new Select(countryDropDown);
+		select.selectByIndex(index);
+	}
+	
+	//Select country by value
+	public void selectCountryByValue(String value) {
+		Select select=new Select(countryDropDown);
+		select.selectByValue(value);
+	}
+	
+	//Select country by visible text
+		public void selectCountryByVisibleText(String visibleText) {
+			Select select=new Select(countryDropDown);
+			select.selectByVisibleText(visibleText);
+		}
+	
 
 
 	//State drop down
@@ -204,6 +225,23 @@ public class ShoppingCartPage {
 	public WebElement getStateDropDown() {
 		return stateDropDown;
 	}
+	
+	public void selectStateByIndex(int index) {
+		Select select=new Select(stateDropDown);
+		select.selectByIndex(index);
+	}
+	
+	//Select country by value
+		public void selectStateByValue(String value) {
+			Select select=new Select(stateDropDown);
+			select.selectByValue(value);
+		}
+		
+		//Select country by visible text
+			public void selectStateByVisibleText(String visibleText) {
+				Select select=new Select(stateDropDown);
+				select.selectByVisibleText(visibleText);
+			}
 
 	//Zip / ppostal code
 	@FindBy(id = "ZipPostalCode")

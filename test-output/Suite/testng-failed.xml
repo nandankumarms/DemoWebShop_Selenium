@@ -4,13 +4,13 @@
   <parameter name="URL" value="https://demowebshop.tricentis.com/"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test_cases.LoginTest">
+      <class name="test_cases.SortBooksTest">
         <methods>
+          <include name="sortBooksTestCase"/>
           <include name="BrowserTearDown"/>
-          <include name="loginTestCase" invocation-numbers="1 3"/>
           <include name="browserSetUp"/>
         </methods>
-      </class> <!-- test_cases.LoginTest -->
+      </class> <!-- test_cases.SortBooksTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
