@@ -3,6 +3,7 @@ package test_cases;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -24,17 +25,21 @@ public class AddToCartFromWishList extends BaseTest{
 		LoginPage login=new LoginPage(driver);
 		WhishlistPage wishlist=new WhishlistPage(driver);
 		
-		welcome.clickLoginLink();
+		clickOnElement(welcome.getLogInLink());
 		
-		login.enterEmail(email);
-		login.enterPassword(password);
+		enterValueToTextField(login.getEmailTextField(), email);
+		enterValueToTextField(login.getPasswordTextField(), password);
 		
-		login.clickLoginButton();
+	    clickOnElement(login.getLoginButton());
 		
-		welcome.clickWishlistLink();
+		clickOnElement(welcome.getWishlistLink());
+		
+		Assert.fail();
 		
 		wishlist.getTableRowCount();
 		wishlist.getColumCount();
+		
+		
 		
 		wishlist.clickAddToCartButton(1);
 		wishlist.enterQuantity(1, "5");

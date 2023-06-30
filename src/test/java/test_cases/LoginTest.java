@@ -8,8 +8,10 @@ import org.testng.annotations.Test;
 
 import com.GenericLibrary.BaseTest;
 import com.GenericLibrary.ReadTestData;
+import com.GenericLibrary.UtilityMethods;
 import com.pomLibrary.LoginPage;
 import com.pomLibrary.WelcomePage;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class LoginTest extends BaseTest{
 	
@@ -20,15 +22,29 @@ public class LoginTest extends BaseTest{
 	
 	@Test(dataProvider = "LoginData")
 	public void loginTestCase(String email, String password) {
+		
+		initObjects();
+		test=report.startTest(getDateAndTime()+"Login");
 		WelcomePage welcome=new WelcomePage(driver);
 		LoginPage login=new LoginPage(driver);
 		
-		welcome.clickLoginLink();
+	    clickOnElement(welcome.getLogInLink());
+	    test.log(LogStatus.INFO, "clicked on login button");
 		
-		login.enterEmail(email);
-		login.enterPassword(password);
-		login.clickLoginButton();
-		welcome.clickLogOutLink();
+		enterValueToTextField(login.getEmailTextField(), email);
+		enterValueToTextField(login.getPasswordTextField(), password);
+		clickOnElement(login.getLoginButton());
+		clickOnElement(welcome.getLogOutLink());
+		
+		clickOnElement(welcome.getLogInLink());
+		
+		String photo=getScreenshot();
+		System.out.println(photo);
+		test.log(LogStatus.INFO, test.addScreenCapture(getScreenshot()));
+		
+		
+		
+		test.log(LogStatus.INFO, test.addScreenCapture(getElementScreenShot(login.getLoginButton())));
 	}
 
 }

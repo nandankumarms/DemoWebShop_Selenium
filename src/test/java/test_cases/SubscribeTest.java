@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.GenericLibrary.BaseTest;
 import com.GenericLibrary.ReadTestData;
+import com.GenericLibrary.UtilityMethods;
 import com.pomLibrary.WelcomePage;
 
 public class SubscribeTest extends BaseTest {
@@ -19,8 +20,13 @@ public class SubscribeTest extends BaseTest {
 	@Test(dataProvider = "SubscribeData")
     public void voteTestCase(String email) {
 		WelcomePage welcome=new WelcomePage(driver);
-		welcome.enterNewsLetterEmail(email);
-		welcome.clickNewsLetterSubsCribeButton();
+		
+		//Enter your email
+		enterValueToTextField(welcome.getNewsLetterEmail(), email);
+		
+		//click on subscribe button
+		clickOnElement(welcome.getNewsLetterSubscribeButton());
+		
 		driver.navigate().refresh();
 	}
 	

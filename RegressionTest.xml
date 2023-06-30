@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-<parameter name="URL" value="https://demowebshop.tricentis.com/"></parameter>
-  <test thread-count="5" name="Test">
+<suite name="Suite" parallel="tests">
+<listeners>
+<listener class-name="com.GenericLibrary.ListenerImplementation"></listener>
+</listeners>
+  <test thread-count="5" name="ChromeTest">
     <classes>
-      <class name="test_cases.AddToCartFromWishList"/>
-      <class name="test_cases.AddBookToCartTest"/>
-      <class name="test_cases.RemoveFromCart"/>
-      <class name="test_cases.RemoveFromWishList"/>
-      
+      <class name="test_cases.AddToCartFromWishList">
+     <parameter name="browser" value="chrome"></parameter>
+      </class>
+      </classes>
+  </test> <!-- Test -->
+  
+  
+
+  <test thread-count="5" name="FirefoxTest">
+    <classes>
+     
+      <class name="test_cases.AddBookToCartTest">
+      <parameter name="browser" value="firefox"></parameter>
+      </class>
+     
     </classes>
   </test> <!-- Test -->
+ 
+ 
+
+  <test thread-count="5" name="EdgeTest">
+    <classes>
+      
+      <class name="test_cases.RemoveFromCart">
+      <parameter name="browser" value="edge"></parameter>
+      </class>
+      <class name="test_cases.RemoveFromWishList"/> 
+    </classes>
+  </test> <!-- Test -->
+  
 </suite> <!-- Suite -->

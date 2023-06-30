@@ -3,11 +3,13 @@ package test_cases;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.GenericLibrary.BaseTest;
 import com.GenericLibrary.ReadTestData;
+import com.GenericLibrary.UtilityMethods;
 import com.pomLibrary.BooksPage;
 import com.pomLibrary.LoginPage;
 import com.pomLibrary.WelcomePage;
@@ -25,15 +27,27 @@ public class AddBookToCartTest extends BaseTest{
 		LoginPage login=new LoginPage(driver);
 		BooksPage books=new BooksPage(driver);
 		
-		welcome.clickLoginLink();
-		login.enterEmail(email);
-		login.enterPassword(password);
+		//click on Book link on welcome page
+		clickOnElement(welcome.getBooksLinkHeader());
 		
-		welcome.clickBooksLinkInHeader();
-		System.out.println("Old price--"+books.getHealthBook_OldPrice());
-		System.out.println("Old price--"+books.getHealthBook_Price());
+		//get the price of the book
+		String oldPrice = getTextOfTheElement(books.getHealthBook_OldPrice());
+		System.out.println("Old price: "+oldPrice);
+		String newPrice=getTextOfTheElement(books.getHealthBook_Price());
+		System.out.println("New Price: "+newPrice);
 		
-		books.clickHealthBookAddToCartButton();
+		//add book to the cart
+		clickOnElement(books.getHealthBookAddToCartButton());
+		
+		Assert.fail();
+		
+		
+		
+	}
+	
+	@Test(dependsOnMethods = "addBookToCartTestCase")
+	public void dummyMethod() {
+		System.out.println("nothing");
 	}
 
 }

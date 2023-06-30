@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.GenericLibrary.BaseTest;
 import com.GenericLibrary.ReadTestData;
+import com.GenericLibrary.UtilityMethods;
 import com.pomLibrary.WelcomePage;
 
 public class SearchTest extends BaseTest {
@@ -19,8 +20,12 @@ public class SearchTest extends BaseTest {
 	@Test(dataProvider = "SearchData")
 	public void searchTest(String product) {
 		WelcomePage welcome=new WelcomePage(driver);
-		welcome.enterInInsearchBox(product);
-		welcome.clickSearchButton();
+		
+		//Enter search item
+		enterValueToTextField(welcome.getSearchBox(), product);
+		
+		//Click on search button
+		clickOnElement(welcome.getSearchButton());
 	}
 
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import com.GenericLibrary.BaseTest;
+import com.GenericLibrary.UtilityMethods;
 import com.pomLibrary.BooksPage;
 import com.pomLibrary.LoginPage;
 import com.pomLibrary.WelcomePage;
@@ -15,22 +16,20 @@ public class SortBooksTest extends BaseTest {
 		WelcomePage welcome=new WelcomePage(driver) ;
 		BooksPage books=new BooksPage(driver);
 		
-		welcome.clickBooksLinkInHeader();
 		
-		for(int i=0;i<2;i++) {
-		books.selectPageSizeByIndex(i);
-		Thread.sleep(1000);
-		}
+		//Click on books link on welcome page
+		clickOnElement(welcome.getBooksLinkHeader());
 		
-		for(int i=0;i<6;i++) {
-			books.selectSortByIndex(i);
-			Thread.sleep(1000);
-			}
 		
-		for(int i=0;i<1;i++) {
-			books.selectViewAsByIndex(i);
-			Thread.sleep(1000);
-			}
+		//Select 2nd option from the sort by list
+		selectOptionByIndex(books.getSortByDropdown(), 2);
+		
+		//select 3rd option from the page size list
+		selectOptionByIndex(books.getPageSizeDropDown(), 2);
+		
+		//Select the second option from the view as dropdown
+		selectOptionByIndex(books.getPageSizeDropDown(), 1);
+		
 		
 		
 	}

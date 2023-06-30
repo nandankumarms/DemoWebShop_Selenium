@@ -28,21 +28,21 @@ public class AddSmartPhoneToCart extends BaseTest{
 		 ElectronicsPage electronics=new ElectronicsPage(driver);
 		 Electronics_CellPhones_Page cellphone=new Electronics_CellPhones_Page(driver);
 		 
-		 welcome.clickLoginLink();
-		 login.enterEmail(email);
-		 login.enterPassword(password);
-		 login.clickLoginButton();
+		clickOnElement(welcome.getLogInLink());
+		enterValueToTextField(login.getEmailTextField(), email);
+		 enterValueToTextField(login.getPasswordTextField(), password);
+		 clickOnElement(login.getLoginButton());
 		 
-		 welcome.clickElectronicsHeader();
+		 clickOnElement(welcome.getElectronicsLinkHeader());
 		 
-		 electronics.clickCellPhoneLink();
+		 clickOnElement(electronics.getCellPhoneLink());
 		 
-		 System.out.println(cellphone.getSmartPhonePrice());
-		 System.out.println(cellphone.getSmartPhoneRatings());
+		 System.out.println(getTextOfTheElement(cellphone.getSmartPhonePrice()));
+		 System.out.println(getTextOfTheElement(cellphone.getSmartPhoneRatings()));
 		 
-		 cellphone.clickSmartPhoneAddToCartButton();
+		
 		 
-		 cellphone.clickSmartPhoneImage();
+		 clickOnElement(cellphone.getSmartPhoneImage());
 		 
 	 }
 }

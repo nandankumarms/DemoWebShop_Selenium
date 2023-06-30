@@ -8,28 +8,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WelcomePage {
+import com.GenericLibrary.UtilityMethods;
+
+/**
+ * @author Nandankumar M S
+ *
+ */
+public class WelcomePage extends BasePage {
 	public WelcomePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-		
+		super(driver);
 	}
-	
 	//Home button
 	@FindBy(xpath = "//div[@class='header-logo']/a/img")
 	private WebElement homeButton;
-	
-	public void clickHomeButton() {
-		homeButton.click();
-	}
-	
+
 	//tricentisAdLink
 	@FindBy(xpath = "//div[@id='nivo-slider']/a[@class='nivo-slider']/img")
 	private WebElement tricentisAdLink;
-	
-	public void clickTricentisAdLink() {
-		tricentisAdLink.click();
-	}
-	
+
 	public WebElement getHomeButton() {
 		return homeButton;
 	}
@@ -488,104 +484,46 @@ public class WelcomePage {
 
 	@FindBy(partialLinkText = "Register")
 	private WebElement registerLink;
-	
-	public void clickRegisterLink() {
-		registerLink.click();
-	}
-	
+
 	@FindBy(partialLinkText = "Log in")
 	private WebElement logInLink;
-	
-	public void clickLoginLink() {
-		logInLink.click();
-	}
-	
+
 	//log out link
 	@FindBy(xpath = "//a[text()='Log out']")
 	private WebElement logOutLink;
-	
-	public void clickLogOutLink() {
-		logOutLink.click();
-	}
-	
-	
-	
+
 	@FindBy(xpath = "//span[text()='Shopping cart']")
 	private WebElement shoppingCartLink;
-	
-	public void clickSoppingCartLink() {
-		shoppingCartLink.click();
-	}
-	
+
 	@FindBy(xpath = "//span[text()='Wishlist']")
 	private WebElement wishlistLink;
-	
-	public void clickWishlistLink() {
-		wishlistLink.click();
-	}
-	
+
 	@FindBy(id = "small-searchterms")
 	private WebElement searchBox;
-	
-	public void enterInInsearchBox(String product) {
-		searchBox.sendKeys(product);
-	}
-	
+
 	@FindBy(xpath = "// input[@value='Search']")
 	private WebElement searchButton;
-	
-	public void  clickSearchButton() {
-		searchButton.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Books')])[1]")
 	private WebElement booksLinkHeader;
-	
-	public void clickBooksLinkInHeader() {
-		booksLinkHeader.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Computer')])[1]")
 	private WebElement computerLinkHeader;
-	
-	public void clickComputerLinkInHeader() {
-		computerLinkHeader.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Electronics')])[1]")
 	private WebElement electronicsLinkHeader;
-	
-	public void clickElectronicsHeader() {
-		electronicsLinkHeader.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Apparel & Shoes')])[1]")
 	private WebElement apparelandShoesLinkHeader;
-	
-	public void clickApparelAndShoesLinkHeader() {
-		apparelandShoesLinkHeader.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Digital downloads')])[1]")
 	private WebElement digitalDownloadsLinkHeader;
-	
-	public void clickDigitalDownloads() {
-		digitalDownloadsLinkHeader.click();
-	}
 
 	@FindBy(xpath = "(//a[contains(text(),'Jewelry')])[1]")
 	private WebElement jewelleryLinkHeader;
-	
-	public void clickJewelleryLinkHeader() {
-		jewelleryLinkHeader.click();
-	}
-	
+
 	@FindBy(xpath = "(//a[contains(text(),'Gift Cards')])[1]")
 	private WebElement giftCardsLinkHeader;
-	
-	public void clickGiftCardsLinkHeader() {
-		giftCardsLinkHeader.click();
-	}
 
 	public WebElement getRegisterLink() {
 		return registerLink;
@@ -611,7 +549,7 @@ public class WelcomePage {
 		this.shoppingCartLink = shoppingCartLink;
 	}
 
-	
+
 
 	public WebElement getSearchBox() {
 		return searchBox;
@@ -684,451 +622,218 @@ public class WelcomePage {
 	public void setGiftCardsLinkHeader(WebElement giftCardsLinkHeader) {
 		this.giftCardsLinkHeader = giftCardsLinkHeader;
 	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Books')]")
 	private WebElement booksLink;
-	
-	public void clickBookLink() {
-		booksLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Computer')]")
 	private WebElement computerLink;
-	
-	public void clickComputerLink() {
-		computerLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Electronics')]")
 	private WebElement electronicsLink;
-	
-	public void clickElectronicsLink() {
-		electronicsLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Apparel & Shoes')]")
 	private WebElement apparelAndShoesLink;
-	
-	public void clickApparelAndShoesLink() {
-		apparelAndShoesLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Digital downloads')]")
 	private WebElement digitalDownloadsLink;
-	
-	public void clickDigitalDownloadsLink() {
-		digitalDownloadsLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Jewelry')]")
 	private WebElement jewelryLink;
-	
-	public void clickJewelryLink() {
-		jewelryLink.click();
-	}
-	
+
 	@FindBy(xpath = "//div[@class='listbox']//a[contains(text(),'Gift Cards')]")
 	private WebElement giftCardsLink;
-	
-	public void clickGiftCardsLink() {
-		giftCardsLink.click();
-	}
-	
-	@FindBy(xpath = "//div[@class='listbox']//a[text()='Tricentis']")
-    private WebElement tricentisLink;
-	
-	public void clickTricentisLink() {
-		tricentisLink.click();
-	}
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='apparel']")
-    private WebElement apparelPopularLink;
-	
-	public void clickApparelPopularLink() {
-		apparelPopularLink.click();
-	}
-	
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='awesome']")
-    private WebElement awesomePopularLink;
-	
-	public void clickAwesomePopularLink() {
-		awesomePopularLink.click();
-	}
-	
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='book']")
-    private WebElement bookPopularLink;
-	
-	public void clickBookPopularLink() {
-		bookPopularLink.click();
-	}
-	
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='camera']")
-    private WebElement cameraPopularLink;
-	
-	public void clickCameraPopularLink() {
-		cameraPopularLink.click();
-	}
-	
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='cell']")
-    private WebElement cellPopularLink;
-	
-	public void clickCellPopularLink() {
-		cellPopularLink.click();
-	}
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='compact']")
-    private WebElement compactPopularLink;
-	
-	public void clickCompactPopularLink() {
-		compactPopularLink.click();
-	}
-	
-	
-	@FindBy(xpath = "//div[@class='tags']//a[text()='computer']")
-    private WebElement computerPopularLink;
-	
-	public void clickComputerPopularLink() {
-		computerPopularLink.click();
-	}
 
+	@FindBy(xpath = "//div[@class='listbox']//a[text()='Tricentis']")
+	private WebElement tricentisLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='apparel']")
+	private WebElement apparelPopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='awesome']")
+	private WebElement awesomePopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='book']")
+	private WebElement bookPopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='camera']")
+	private WebElement cameraPopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='cell']")
+	private WebElement cellPopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='compact']")
+	private WebElement compactPopularLink;
+
+	@FindBy(xpath = "//div[@class='tags']//a[text()='computer']")
+	private WebElement computerPopularLink;
 
 	@FindBy(xpath = "//div[@class='tags']//a[text()='cool']")
-    private WebElement coolPopularLink;
-	
-	public void clickCoolPopularLink() {
-		coolPopularLink.click();
-	}
+	private WebElement coolPopularLink;
 
-	
 	@FindBy(xpath = "//div[@class='tags']//a[text()='digital']")
-    private WebElement digitalPopularLink;
-	
-	public void clickDigitalPopularLink() {
-		digitalPopularLink.click();
-	}
-	
-	
+	private WebElement digitalPopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='gift']")
-    private WebElement giftPopularLink;
-	
-	public void clickGiftPopularLink() {
-		giftPopularLink.click();
-	}
-	
+	private WebElement giftPopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='jewelry']")
-    private WebElement jewelryPopularLink;
-	
-	public void clickJewelryPopularLink() {
-		jewelryPopularLink.click();
-	}
-	
+	private WebElement jewelryPopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='nice']")
-    private WebElement nicePopularLink;
-	
-	public void clickNicePopularLink() {
-		nicePopularLink.click();
-	}
-	
+	private WebElement nicePopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='shirt']")
-    private WebElement shirtPopularLink;
-	
-	public void clickShirtPopularLink() {
-		shirtPopularLink.click();
-	}
-	
-	
+	private WebElement shirtPopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='shoes']")
-    private WebElement shoesPopularLink;
-	
-	public void clickShoesPopularLink() {
-		shoesPopularLink.click();
-	}
-	
+	private WebElement shoesPopularLink;
+
 	@FindBy(xpath = "//div[@class='tags']//a[text()='TCP']")
-    private WebElement tcpPopularLink;
-	
-	public void clickTcpPopularLink() {
-		tcpPopularLink.click();
-	}
-	
+	private WebElement tcpPopularLink;
+
 	@FindBy(xpath = "//div[@class='view-all']//a")
-    private WebElement viewAllPopularLink;
-	
-	public void clickViewAllPopularLink() {
-		viewAllPopularLink.click();
-	}
-	
-	
-	
-	
-	
-	
+	private WebElement viewAllPopularLink;
+
 	// INFORMATION LINKS
-	
 	@FindBy(xpath = "//div[@class='column information']//a[text()='Sitemap']")
-    private WebElement siteMapLink;
-	
-	public void clickSiteMapLink() {
-		siteMapLink.click();
-	}
-	
+	private WebElement siteMapLink;
+
 	@FindBy(xpath = "//div[@class='column information']//a[text()='Shipping & Returns']")
-    private WebElement shippingAndReturnsLink;
-	
-	public void clickShippingAndReturnsLink() {
-		shippingAndReturnsLink.click();
-	}
-	
+	private WebElement shippingAndReturnsLink;
+
 	@FindBy(xpath = "//div[@class='column information']//a[text()='Privacy Notice']")
-    private WebElement PrivapyNoticeLink;
-	
-	public void clickPrivacyNoticeLink() {
-		PrivapyNoticeLink.click();
-	}
-	
+	private WebElement PrivapyNoticeLink;
+
 	@FindBy(xpath = "//div[@class='column information']//a[text()='Conditions of Use']")
-    private WebElement conditionsOfUseLink;
-	
-	public void clickConditionsOfUseLink() {
-		conditionsOfUseLink.click();
-	}
-	
+	private WebElement conditionsOfUseLink;
+
 	@FindBy(xpath = "//div[@class='column information']//a[text()='About us']")
-    private WebElement aboutUsLink;
-	
-	public void clickAboutUsLink() {
-		aboutUsLink.click();
-	}
-	
+	private WebElement aboutUsLink;
+
 	@FindBy(xpath = "//div[@class='column information']//a[text()='Contact us']")
-    private WebElement contactUsLink;
-	
-	public void clickContactUsLink() {
-		contactUsLink.click();
-	}
-	
-	
-	
-	
+	private WebElement contactUsLink;
+
 	//CUSTOMER SERVICE LINKS
-	
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='Search']")
-    private WebElement searchLink;
-	
-	public void clickSearchLink() {
-		searchLink.click();
-	}
-	
-	
+	private WebElement searchLink;
+
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='News']")
-    private WebElement newsLink;
-	
-	public void clickNewsLink() {
-		newsLink.click();
-	}
-	
+	private WebElement newsLink;
+
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='Blog']")
-    private WebElement blogLink;
-	
-	public void clickBlogLink() {
-		blogLink.click();
-	}
+	private WebElement blogLink;
+
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='Recently viewed products']")
-    private WebElement recentlyViewedProductsLink;
-	
-	public void clickRecentlyViewedProductsLink() {
-		recentlyViewedProductsLink.click();
-	}
-	
+	private WebElement recentlyViewedProductsLink;
+
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='Compare products list']")
-    private WebElement compareProductsListLink;
-	
-	public void clickCompareProductsListLink() {
-		compareProductsListLink.click();
-	}
-	
+	private WebElement compareProductsListLink;
+
 	@FindBy(xpath = "//div[@class='column customer-service']//a[text()='New products']")
-    private WebElement newProductsLink;
-	
-	public void clickNewProductsLink() {
-		newProductsLink.click();
-	}
-	
-	
-	
-	
+	private WebElement newProductsLink;
+
 	//MY ACCOUNT LINKS
-		
 	@FindBy(xpath = "//div[@class='column my-account']//a[text()='My account']")
-    private WebElement myAccountLink;
-	
-	public void clickMyAccountLink() {
-		myAccountLink.click();
-	}
-	
-	
+	private WebElement myAccountLink;
+
 	@FindBy(xpath = "//div[@class='column my-account']//a[text()='Orders']")
-    private WebElement ordersLink;
-	
-	public void clickOrdersLink() {
-		ordersLink.click();
-	}
-	
+	private WebElement ordersLink;
+
 	@FindBy(xpath = "//div[@class='column my-account']//a[text()='Addresses']")
-    private WebElement addressesLink;
-	
-	public void clickAddressesLink() {
-		addressesLink.click();
-	}
+	private WebElement addressesLink;
 
 	@FindBy(xpath = "//div[@class='column my-account']//a[text()='Shopping cart']")
-    private WebElement shoppingCartLinkMyAccount;
-	
-	public void clickShoppingCartLinkMyAccount() {
-		shoppingCartLinkMyAccount.click();
-	}
+	private WebElement shoppingCartLinkMyAccount;
 
 	@FindBy(xpath = "//div[@class='column my-account']//a[text()='Wishlist']")
-    private WebElement wishlistLinkMyAccount;
-	
-	public void clickWishListLinkMyAccount() {
-		wishlistLinkMyAccount.click();
+	private WebElement wishlistLinkMyAccount;
+
+	// FOLLOW-US LINKS
+	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='Facebook']")
+	private WebElement facebookLink;
+
+	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='Twitter']")
+	private WebElement twitterLink;
+
+	public WebElement getTricentisAdLink() {
+		return tricentisAdLink;
 	}
 
-	
-	
-	// FOLLOW-US LINKS
-	
-	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='Facebook']")
-    private WebElement facebookLink;
-	
-	public void clickFaceBookLink() {
-		facebookLink.click();
+	public void setTricentisAdLink(WebElement tricentisAdLink) {
+		this.tricentisAdLink = tricentisAdLink;
 	}
-	
-	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='Twitter']")
-    private WebElement twitterLink;
-	
-	public void clickTwitterLink() {
-		twitterLink.click();
+
+	public WebElement getLogOutLink() {
+		return logOutLink;
 	}
-	
+
+	public void setLogOutLink(WebElement logOutLink) {
+		this.logOutLink = logOutLink;
+	}
+
+	public WebElement getNewsLetterSubscribeButton() {
+		return newsLetterSubscribeButton;
+	}
+
+	public void setNewsLetterSubscribeButton(WebElement newsLetterSubscribeButton) {
+		this.newsLetterSubscribeButton = newsLetterSubscribeButton;
+	}
+
 	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='RSS']")
-    private WebElement rssLink;
-	
-	public void clickRssLink() {
-		rssLink.click();
-	}
-	
+	private WebElement rssLink;
+
 	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='YouTube']")
-    private WebElement youtubeLink;
-	
-	public void clickYoutubeLink() {
-		youtubeLink.click();
-	}
-	
+	private WebElement youtubeLink;
+
 	@FindBy(xpath = "//div[@class='column follow-us']//a[text()='Google+']")
-    private WebElement googlePlusLink;
-	
-	public void clickGooglePlusLink() {
-		googlePlusLink.click();
-	}
-	
-	
+	private WebElement googlePlusLink;
+
 	// Community poll Radio buttons
 	@FindBy(id = "pollanswers-1")
-    private WebElement excellentRadioButton;
-	
-	public void clickExcellentRadioButton() {
-		excellentRadioButton.click();
-	}
-	
-	
+	private WebElement excellentRadioButton;
+
 	@FindBy(id = "pollanswers-2")
-    private WebElement goodRadioButton;
-	
-	public void clickgoodRadioButton() {
-		goodRadioButton.click();
-	}
-	
+	private WebElement goodRadioButton;
+
 	@FindBy(id = "pollanswers-3")
-    private WebElement poorRadioButton;
-	
-	public void clickPoorRadioButton() {
-		poorRadioButton.click(); 
-	}
-	
+	private WebElement poorRadioButton;
+
 	@FindBy(id = "pollanswers-4")
-    private WebElement veryBadRadioButton;
-	
-	public void clickVeryBadRadioButton() {
-	   veryBadRadioButton.click();
-	}
-	
+	private WebElement veryBadRadioButton;
+
 	@FindBy(id = "vote-poll-1")
-    private WebElement voteButton;
-	
-	public void clickVoteButton() {
-	   voteButton.click();
-	}
-	
-	
+	private WebElement voteButton;
+
 	//RECENTLY VIEWED PRODUCTS
 	@FindBy(xpath = "//div[@class='block block-recently-viewed-products']//ul[@class='list']/li")
 	private List<WebElement> recentlyViewedProducts;
-	
+
 	public void displayRecentlyViwedProducts() {
-	if(recentlyViewedProducts.size()>0) {
-	for(WebElement recentProducts: recentlyViewedProducts) {
-		System.out.println(recentProducts.getText());
+		if(recentlyViewedProducts.size()>0) {
+			for(WebElement recentProducts: recentlyViewedProducts) {
+				System.out.println(recentProducts.getText());
+			}
+		}
+		else {
+			System.out.println("No products to display");
+		}
+
 	}
-	}
-	else {
-		System.out.println("No products to display");
-	}
-	
-	}
-	
-	
-	
+
 	// Newsletter subscribe
 	@FindBy(id = "newsletter-email")
 	private WebElement newsLetterEmail;
-	
-	public void enterNewsLetterEmail(String email) {
-		newsLetterEmail.sendKeys(email);
-	}
-	
+
 	//click subscribe button
 	@FindBy(id = "newsletter-subscribe-button")
 	private WebElement newsLetterSubscribeButton;
-	
-	public void clickNewsLetterSubsCribeButton() {
-		newsLetterSubscribeButton.click();
-	}
-	
+
 	//Footer Powerd by
 	@FindBy(xpath = "//div[@class='footer-poweredby']")
 	private WebElement powredByText;
-	
-	public String displayPoweredby() {
-		System.out.println(powredByText.getText());
-	return	powredByText.getText();
-		
-	}
-	
-	
+
 	//Footer disclaimer
 	@FindBy(xpath = "//div[@class='footer-disclaimer']")
 	private WebElement footerDisclaimer;
-	
-	public String displayFooterDisclaimer() {
-		System.out.println(footerDisclaimer.getText());
-		
-		return footerDisclaimer.getText();
-	}
 }

@@ -24,20 +24,36 @@ public class RemoveFromCart extends BaseTest {
 		LoginPage login=new LoginPage(driver);
 		ShoppingCartPage cart=new ShoppingCartPage(driver);
 		
-		welcome.clickLoginLink();
-		login.enterEmail(email);
-		login.enterPassword(password);
-		login.clickLoginButton();
+		//Login
+		clickOnElement(welcome.getLogInLink());
 		
-		welcome.clickSoppingCartLink();
+		//Enter email
+		enterValueToTextField(login.getEmailTextField(), email);
+		
+		//Enter password
+		enterValueToTextField(login.getPasswordTextField(), password);
+		
+		//click on log in button
+		clickOnElement(login.getLoginButton());
+		
+		//click on shopping cart link
+		clickOnElement(welcome.getShoppingCartLink());
+		
+		//get table row count
 		cart.getTableRowCount();
+		
+		//get column count
 		cart.getColumCount();
-		System.out.println(cart.getTotalPrice(2));
+		
+	//	System.out.println(cart.getTotalPrice(2));
 		cart.clickRemoveButton(2);
 		
-		cart.enterQuantity(1, "8");
+		cart.enterQuantity(4, "2");
 		
-		cart.clickUpdateShoppingCart();
+		selectOptionByVisibleText(cart.getCountryDropDown(), "United States");
+		
+		selectOptionByValue(cart.getStateDropDown(), "54");
+		//clickOnElement(cart.getUpdateShoppingCart());
 	}
 
 }

@@ -1,56 +1,48 @@
 package com.pomLibrary;
 
+/**
+ * @author Nandankumar M S
+ *
+ */
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 	public LoginPage(WebDriver driver) {
-     PageFactory.initElements(driver, this);
+		super(driver);
+     
 	}
 	
+	//Email text field
 	@FindBy(id = "Email")
 	private WebElement emailTextField;
 	
-	public void enterEmail(String email) {
-		emailTextField.sendKeys(email);
-	}
-	
+	//Password text field
 	@FindBy(id = "Password")
 	private WebElement passwordTextField;
-	
-	public void enterPassword(String password) {
-		passwordTextField.sendKeys(password);
-	}
-
-	@FindBy(id = "RememberMe")
-	private WebElement rememberMeCheckBox;
-	
-	public void clickRememberMeCheckBox() {
-		rememberMeCheckBox.click();
-	}
-	
-	@FindBy(partialLinkText = "Forgot password?")
-	private WebElement forgotPasswordLink;
-	
-	public void clickForgotPasswordLink() {
-		forgotPasswordLink.click();
-	}
-	
-	@FindBy(xpath = "//input[@value='Log in']")
-	private WebElement loginButton;
-	
 	
 	public WebElement getEmailTextField() {
 		return emailTextField;
 	}
 
-
+	//Remember me check box
+	@FindBy(id = "RememberMe")
+	private WebElement rememberMeCheckBox;
+	
+	//Forgot password link
+	@FindBy(partialLinkText = "Forgot password?")
+	private WebElement forgotPasswordLink;
+	
+	//Login button
+	@FindBy(xpath = "//input[@value='Log in']")
+	private WebElement loginButton;
+	
 	public void setEmailTextField(WebElement emailTextField) {
 		this.emailTextField = emailTextField;
 	}
-
 
 	public WebElement getPasswordTextField() {
 		return passwordTextField;
@@ -92,7 +84,5 @@ public class LoginPage {
 	}
 
 
-	public void clickLoginButton() {
-		loginButton.click();
-	}
+	
 }

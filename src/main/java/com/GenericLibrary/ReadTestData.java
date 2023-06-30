@@ -9,9 +9,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class ReadTestData {
+public class ReadTestData implements FrameworkConstants {
 	public static String[][] readExcelData(String sheetName) throws EncryptedDocumentException, IOException {
-		File file=new File("./src/test/resources/TestData/TestData.xlsx");
+		File file=new File(EXCEL_PATH);
 		
 		FileInputStream fis=new FileInputStream(file);
 		

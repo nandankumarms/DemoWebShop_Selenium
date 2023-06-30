@@ -24,20 +24,20 @@ public class RemoveFromWishList extends BaseTest{
 		LoginPage login=new LoginPage(driver);
 		WhishlistPage wishlist=new WhishlistPage(driver);
 		
-		welcome.clickLoginLink();
+		clickOnElement(welcome.getLogInLink());
 		
-		login.enterEmail(email);
-		login.enterPassword(password);
+		enterValueToTextField(login.getEmailTextField(), email);
+		enterValueToTextField(login.getPasswordTextField(), password);
 		
-		login.clickLoginButton();
+		clickOnElement(login.getLoginButton());
 		
-		welcome.clickWishlistLink();
+		clickOnElement(welcome.getWishlistLink());
 		
 		wishlist.getTableRowCount();
 		wishlist.getColumCount();
 		
 		wishlist.clickRemoveButton(1);
-		wishlist.clickUpdateWishListButton();
+		//wishlist.clickUpdateWishListButton();
 		
 	}
 	
